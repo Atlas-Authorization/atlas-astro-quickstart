@@ -1,0 +1,8 @@
+---
+// Astro has no client UI bundle; sign-in happens on the Atlas-hosted flow. Send
+// the visitor there, asking it to return to this app's dashboard afterwards.
+const frontendApi = import.meta.env.PUBLIC_ATLAS_FRONTEND_API ?? 'https://atlasauth.net';
+const redirectUrl = new URL('/dashboard', Astro.url.origin).toString();
+const target = `${frontendApi.replace(/\/$/, '')}/sign-in?redirect_url=${encodeURIComponent(redirectUrl)}`;
+return Astro.redirect(target);
+---
