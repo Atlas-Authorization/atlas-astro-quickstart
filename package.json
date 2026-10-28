@@ -11,6 +11,6 @@
   "dependencies": {
     "@astrojs/node": "^8.3.4",
     "@atlasauth/astro": "^0.1.0",
-    "astro": "^4.16.0"
+    "astro": "^7.4.2"
   }
 }
